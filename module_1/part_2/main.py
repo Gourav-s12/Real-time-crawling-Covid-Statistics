@@ -25,5 +25,6 @@ def main():
             option_new_case_recovered.main(country)
             option_new_case.main(country)
 
+
 if __name__ == '__main__':
     main()
