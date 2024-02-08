@@ -23,6 +23,9 @@ def main(country):
             option_new_case.main(country)
             
             print(f"detail fetched for {country}")
+            return
+    
+    print("Entered country is not on our watch list")
 
 if __name__ == '__main__':
     main("India")
