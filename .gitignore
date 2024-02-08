@@ -164,3 +164,4 @@ cython_debug/
 module_1/part_2/output/*.txt
 module_1/part_2/*.html
 module_1/part_2/token.txt
+module_1/part_2/__pycache__
