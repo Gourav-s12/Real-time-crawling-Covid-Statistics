@@ -19,7 +19,7 @@ def main(file1, file2):
     # Create a new list with formatted dates and corresponding values
     result_data = []
     for date, value in combined_data:
-        formatted_date = datetime.strptime(date.strip(), "%b %d, %Y").strftime("%d-%m-%Y")
+        formatted_date = datetime.strptime(date.strip(), "%b %d, %Y").strftime('%Y-%m-%d')
         result_data.append([formatted_date, value.strip()])
 
     
