@@ -214,7 +214,7 @@ def p_handledata(p):
     # print("odjskc")
     # print(len(p))
     if len(p) == 6:
-        with open('./output/daily_death_date.txt', 'w') as file:
+        with open('./output/new_recovered_case_date.txt', 'w') as file:
             # Write the line to the file
             file.write(p[3])
 

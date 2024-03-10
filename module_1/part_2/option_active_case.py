@@ -1,6 +1,7 @@
 import ply.lex as lex
 import ply.yacc as yacc
 import re
+import marge_output
 
 ###DEFINING TOKENS###
 tokens = ('BEGINTABLEA',
