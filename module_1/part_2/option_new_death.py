@@ -213,10 +213,10 @@ def p_handledata(p):
     global country_name
     # print("odjskc")
     # # print(len(p))
-    # if len(p) == 6:
-    #     with open('./output/daily_death_date.txt', 'w') as file:
-    #         # Write the line to the file
-    #         file.write(p[3])
+    if len(p) == 6:
+        with open('./output/daily_death_date.txt', 'w') as file:
+            # Write the line to the file
+            file.write(p[3])
 
     if len(p) == 7:
         with open('./output/'+country_name+'_daily_death.txt', 'w') as file:
