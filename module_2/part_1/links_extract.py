@@ -30,8 +30,8 @@ def extract_links(link, what):
     print(f"getting info from HTML file: {file_name}")
     
     webpage_download.main(link)
-    if what == "response":
-        extract_info.main(file_name, what)
+    # if what == "response":
+    extract_info.main(file_name, what)
 
 def main():
     
