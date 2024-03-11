@@ -1,5 +1,4 @@
 import get_links
-import get_countries
 import main_webpage_download
 import os
 import re
@@ -32,8 +31,6 @@ def divide_links(links):
 
 def main():
     
-    # countries = get_countries.main()
-    # print(countries)
     main_webpage_download.main()
     links = get_links.main()
     divide_links(links)
