@@ -18,7 +18,7 @@ def main():
     print("************************************")
         
     while True :
-        country = "India" # input("\nEnter Name of the Country : ")
+        country = input("\nEnter Name of the Country : ")
         country = country.strip().replace(" ","_")
 
         found = False
@@ -43,9 +43,9 @@ def main():
         if choice == 'q' :
             break
 
-        date1 = "22-10-2023" # input("Input Starting Date [dd-mm-yyyy format] : ")
+        date1 = input("Input Starting Date [dd-mm-yyyy format] : ") # "22-10-2023"
         start_date = validate_date(date1)
-        date2 = "22-12-2023" # input("Input Ending Date [dd-mm-yyyy format] : ")
+        date2 = input("Input Ending Date [dd-mm-yyyy format] : ") # "22-12-2023"
         end_date = validate_date(date2)
 
         if start_date is None or end_date is None : 
