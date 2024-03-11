@@ -165,8 +165,8 @@ def p_error(p):
     pass
 
 def main(file_name, folder_name):
-    if not os.path.exists('extracted'):
-        os.makedirs('extracted')
+    if not os.path.exists('output'):
+        os.makedirs('output')
 
     match = re.match(r'(\w+)_(\d{4})', file_name)
     if match:
@@ -188,7 +188,7 @@ def main(file_name, folder_name):
         "december": "12"
         }[month.lower()]    
 
-        year_folder = os.path.join('extracted',year)
+        year_folder = os.path.join('output',year)
         if not os.path.exists(year_folder):
             os.makedirs(year_folder)
         
