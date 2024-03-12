@@ -14,17 +14,18 @@ def link_save(links,type):
 
 def divide_links(links):
     # Download HTML files into respective folders
-    R_links = []
-    T_links = []
+    R_links = set()
+    T_links = set()
+
     for link in links:
         
         match_response = re.search(r'_to_the_COVID-19_pandemic_in_\w+_\d{4}', link)
         match_timeline = re.search(r'_of_the_COVID-19_pandemic_in_\w+?_?\d{4}', link)
         
         if match_response:
-            R_links.append(link)
+            R_links.add(link)
         elif match_timeline:
-            T_links.append(link)
+            T_links.add(link)
 
     link_save(R_links, "response")
     link_save(T_links, "timeline")

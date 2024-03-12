@@ -3,7 +3,8 @@ import re
 from ply import lex, yacc
 from urllib.request import Request, urlopen
 import webpage_download
-import extract_info
+import extract_info_response
+import extract_info_timeline
 
 # Function to save links to a text file
 def extract_links(link, what):
@@ -27,11 +28,14 @@ def extract_links(link, what):
     else:
         file_name = f"{year}.html"
 
-    print(f"getting info from HTML file: {file_name}")
+    print(f"processing info from: {file_name}")
     
+    # geting the data
     webpage_download.main(link)
-    # if what == "response":
-    extract_info.main(file_name, what)
+    if what == "response":
+        extract_info_response.main(file_name, what)
+    else:
+        extract_info_timeline.main(file_name, what)
 
 def main():
     
@@ -39,6 +43,7 @@ def main():
         for line in file:
             extract_links(line, "response")
             
+    print()
     with open('timeline_links.txt', 'r') as file:
         for line in file:
             extract_links(line, "timeline")

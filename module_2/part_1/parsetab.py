@@ -6,9 +6,9 @@ _tabversion = '3.10'
 
 _lr_method = 'LALR'
 
-_lr_signature = 'BEGINTABLE CLOSEDATA CLOSEDIV CLOSEH2 CLOSEH3 CLOSEHREF CLOSELI CLOSEPARA CLOSEROW CLOSESPAN CLOSETABLE CLOSEUL CONTENT GARBAGE OPENDATA OPENDIV OPENH2 OPENH3 OPENHREF OPENLI OPENPARA OPENROW OPENSPAN OPENTABLE OPENULstart : handleheader dataCell\n             | handleheader dataLI\n             | emptydataContent : CONTENT\n                   | CONTENT CONTENT\n                   | CONTENT CONTENT CONTENT\n                   | CONTENT CONTENT CONTENT CONTENT\n                   | CONTENT CONTENT CONTENT CONTENT CONTENT\n                   | CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT\n                   | CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENTreLI : dataContent dataHREF reLI\n            | dataHREF dataContent reLI\n            | dataLI : OPENLI reLI CLOSELI dataLI\n              | skiptag : OPENHREF skiptag\n               | CLOSEHREF skiptag\n               | CONTENT skiptag\n               | emptydataSpan : OPENSPAN CLOSESPAN\n                | OPENSPAN dataContent CLOSESPAN\n                | OPENSPAN\n                | CLOSESPANdataHREF : OPENHREF dataContent CLOSEHREF\n                | OPENHREF CONTENT CONTENT CONTENT CLOSEHREF\n                | OPENHREF dataSpan CLOSEHREFdataCell : OPENPARA dataContent dataHREF dataContent dataHREF CLOSEPARA \n                | OPENPARA dataContent dataHREF CLOSEPARA\n                |handleheader : OPENH2 dataSpan dataSpan dataSpan dataSpan dataHREF dataSpan dataSpan CLOSEH2\n                    | OPENH3 OPENSPAN CONTENT CLOSESPAN dataSpan dataSpan dataHREF dataSpan dataSpan CLOSEH3\n                    empty :'
+_lr_signature = 'CLOSEFIG CLOSEHREF CONTENT FIRST HEADEND HEADSTART OPENFIG OPENHREF SECOND SKIPTAGstart : sectionsection : FIRST skipTags contentSequence SECOND \n    skipTags : CONTENT skipTags\n            |  OPENHREF skipTags\n            | CLOSEHREF skipTags\n            |\n    contentSequence : date contentElement contentSequence \n                       | contentElement\n    \n    date : HEADSTART CONTENT OPENHREF CONTENT CLOSEHREF HEADEND\n         | HEADSTART CONTENT HEADEND\n    contentElement : OPENHREF skip CLOSEHREF contentElement\n                      | OPENFIG skipcontent CLOSEFIG contentElement\n                      | CONTENT contentElement\n                      | empty\n                      skip : CONTENT skip\n            | emptyskipcontent : CONTENT skipcontent\n                   | OPENHREF skipcontent\n                   | CLOSEHREF skipcontent\n                   | empty content : CONTENTempty :'
     
-_lr_action_items = {'OPENH2':([0,],[4,]),'OPENH3':([0,],[5,]),'$end':([0,1,2,3,6,7,26,36,38,51,60,62,],[-32,0,-15,-3,-1,-2,-15,-28,-14,-27,-30,-31,]),'OPENPARA':([2,60,62,],[8,-30,-31,]),'OPENLI':([2,26,60,62,],[9,9,-30,-31,]),'OPENSPAN':([4,5,10,11,12,19,20,21,32,33,34,41,43,45,49,53,54,55,58,],[11,13,11,-22,-23,11,11,-20,11,-21,11,-24,-26,11,11,-25,11,11,11,]),'CLOSESPAN':([4,10,11,12,15,19,20,21,22,23,25,32,33,34,37,41,43,45,47,49,52,53,54,55,56,58,59,],[12,12,21,-23,-4,12,12,-20,33,34,-5,12,-21,12,-6,-24,-26,12,-7,12,-8,-25,12,12,-9,12,-10,]),'CONTENT':([8,9,11,13,15,18,19,24,25,27,28,30,37,41,42,43,47,48,52,53,56,59,],[15,15,15,23,25,15,30,15,37,15,15,42,47,-24,48,-26,52,47,56,-25,59,-10,]),'CLOSELI':([9,15,16,25,27,28,37,39,40,41,43,47,52,53,56,59,],[-13,-4,26,-5,-13,-13,-6,-11,-12,-24,-26,-7,-8,-25,-9,-10,]),'OPENHREF':([9,11,12,14,15,17,21,25,27,28,33,35,37,41,43,44,47,50,52,53,56,59,],[19,-22,-23,19,-4,19,-20,-5,19,19,-21,19,-6,-24,-26,19,-7,19,-8,-25,-9,-10,]),'CLOSEHREF':([11,12,21,29,30,31,33,42,47,48,52,56,59,],[-22,-23,-20,41,-4,43,-21,-5,-7,53,-8,-9,-10,]),'CLOSEH2':([11,12,21,33,57,],[-22,-23,-20,-21,60,]),'CLOSEH3':([11,12,21,33,61,],[-22,-23,-20,-21,62,]),'CLOSEPARA':([24,41,43,46,53,],[36,-24,-26,51,-25,]),}
+_lr_action_items = {'FIRST':([0,],[3,]),'$end':([1,2,19,],[0,-1,-2,]),'CONTENT':([3,4,5,6,7,9,11,12,13,14,15,16,17,18,20,22,24,27,28,29,32,33,34,36,41,42,44,],[5,12,5,5,5,12,21,12,24,27,-14,-3,-4,-5,12,-13,24,27,27,27,40,-10,12,12,-11,-12,-9,]),'OPENHREF':([3,4,5,6,7,9,12,14,15,16,17,18,20,21,22,27,28,29,33,34,36,41,42,44,],[6,13,6,6,6,13,13,28,-14,-3,-4,-5,13,32,-13,28,28,28,-10,13,13,-11,-12,-9,]),'CLOSEHREF':([3,5,6,7,13,14,23,24,25,27,28,29,35,40,],[7,7,7,7,-22,29,34,-22,-16,29,29,29,-15,43,]),'HEADSTART':([3,4,5,6,7,9,12,15,16,17,18,20,22,33,34,36,41,42,44,],[-6,11,-6,-6,-6,-22,-22,-14,-3,-4,-5,11,-13,-10,-22,-22,-11,-12,-9,]),'OPENFIG':([3,4,5,6,7,9,12,15,16,17,18,20,22,33,34,36,41,42,44,],[-6,14,-6,-6,-6,14,14,-14,-3,-4,-5,14,-13,-10,14,14,-11,-12,-9,]),'SECOND':([3,4,5,6,7,8,9,10,12,15,16,17,18,20,22,31,33,34,36,41,42,44,],[-6,-22,-6,-6,-6,19,-22,-8,-22,-14,-3,-4,-5,-22,-13,-7,-10,-22,-22,-11,-12,-9,]),'CLOSEFIG':([14,26,27,28,29,30,37,38,39,],[-22,36,-22,-22,-22,-20,-17,-18,-19,]),'HEADEND':([21,43,],[33,44,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -17,7 +17,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'start':([0,],[1,]),'handleheader':([0,],[2,]),'empty':([0,],[3,]),'dataCell':([2,],[6,]),'dataLI':([2,26,],[7,38,]),'dataSpan':([4,10,19,20,32,34,45,49,54,55,58,],[10,20,31,32,44,45,50,54,57,58,61,]),'dataContent':([8,9,11,18,19,24,27,28,],[14,17,22,28,29,35,17,17,]),'reLI':([9,27,28,],[16,39,40,]),'dataHREF':([9,14,17,27,28,35,44,50,],[18,24,27,18,18,46,49,55,]),}
+_lr_goto_items = {'start':([0,],[1,]),'section':([0,],[2,]),'skipTags':([3,5,6,7,],[4,16,17,18,]),'contentSequence':([4,20,],[8,31,]),'date':([4,20,],[9,9,]),'contentElement':([4,9,12,20,34,36,],[10,20,22,10,41,42,]),'empty':([4,9,12,13,14,20,24,27,28,29,34,36,],[15,15,15,25,30,15,25,30,30,30,15,15,]),'skip':([13,24,],[23,35,]),'skipcontent':([14,27,28,29,],[26,37,38,39,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -27,36 +27,26 @@ for _k, _v in _lr_goto_items.items():
 del _lr_goto_items
 _lr_productions = [
   ("S' -> start","S'",1,None,None,None),
-  ('start -> handleheader dataCell','start',2,'p_start','extract_info.py',86),
-  ('start -> handleheader dataLI','start',2,'p_start','extract_info.py',87),
-  ('start -> empty','start',1,'p_start','extract_info.py',88),
-  ('dataContent -> CONTENT','dataContent',1,'p_dataContent','extract_info.py',93),
-  ('dataContent -> CONTENT CONTENT','dataContent',2,'p_dataContent','extract_info.py',94),
-  ('dataContent -> CONTENT CONTENT CONTENT','dataContent',3,'p_dataContent','extract_info.py',95),
-  ('dataContent -> CONTENT CONTENT CONTENT CONTENT','dataContent',4,'p_dataContent','extract_info.py',96),
-  ('dataContent -> CONTENT CONTENT CONTENT CONTENT CONTENT','dataContent',5,'p_dataContent','extract_info.py',97),
-  ('dataContent -> CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT','dataContent',6,'p_dataContent','extract_info.py',98),
-  ('dataContent -> CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT','dataContent',7,'p_dataContent','extract_info.py',99),
-  ('reLI -> dataContent dataHREF reLI','reLI',3,'p_reLI','extract_info.py',124),
-  ('reLI -> dataHREF dataContent reLI','reLI',3,'p_reLI','extract_info.py',125),
-  ('reLI -> <empty>','reLI',0,'p_reLI','extract_info.py',126),
-  ('dataLI -> OPENLI reLI CLOSELI dataLI','dataLI',4,'p_dataLI','extract_info.py',129),
-  ('dataLI -> <empty>','dataLI',0,'p_dataLI','extract_info.py',130),
-  ('skiptag -> OPENHREF skiptag','skiptag',2,'p_skiptag','extract_info.py',133),
-  ('skiptag -> CLOSEHREF skiptag','skiptag',2,'p_skiptag','extract_info.py',134),
-  ('skiptag -> CONTENT skiptag','skiptag',2,'p_skiptag','extract_info.py',135),
-  ('skiptag -> empty','skiptag',1,'p_skiptag','extract_info.py',136),
-  ('dataSpan -> OPENSPAN CLOSESPAN','dataSpan',2,'p_dataSpan','extract_info.py',138),
-  ('dataSpan -> OPENSPAN dataContent CLOSESPAN','dataSpan',3,'p_dataSpan','extract_info.py',139),
-  ('dataSpan -> OPENSPAN','dataSpan',1,'p_dataSpan','extract_info.py',140),
-  ('dataSpan -> CLOSESPAN','dataSpan',1,'p_dataSpan','extract_info.py',141),
-  ('dataHREF -> OPENHREF dataContent CLOSEHREF','dataHREF',3,'p_dataHREF','extract_info.py',144),
-  ('dataHREF -> OPENHREF CONTENT CONTENT CONTENT CLOSEHREF','dataHREF',5,'p_dataHREF','extract_info.py',145),
-  ('dataHREF -> OPENHREF dataSpan CLOSEHREF','dataHREF',3,'p_dataHREF','extract_info.py',146),
-  ('dataCell -> OPENPARA dataContent dataHREF dataContent dataHREF CLOSEPARA','dataCell',6,'p_dataCell','extract_info.py',149),
-  ('dataCell -> OPENPARA dataContent dataHREF CLOSEPARA','dataCell',4,'p_dataCell','extract_info.py',150),
-  ('dataCell -> <empty>','dataCell',0,'p_dataCell','extract_info.py',151),
-  ('handleheader -> OPENH2 dataSpan dataSpan dataSpan dataSpan dataHREF dataSpan dataSpan CLOSEH2','handleheader',9,'p_handleheader','extract_info.py',154),
-  ('handleheader -> OPENH3 OPENSPAN CONTENT CLOSESPAN dataSpan dataSpan dataHREF dataSpan dataSpan CLOSEH3','handleheader',10,'p_handleheader','extract_info.py',155),
-  ('empty -> <empty>','empty',0,'p_empty','extract_info.py',168),
+  ('start -> section','start',1,'p_start','extract_info_timeline.py',68),
+  ('section -> FIRST skipTags contentSequence SECOND','section',4,'p_section','extract_info_timeline.py',71),
+  ('skipTags -> CONTENT skipTags','skipTags',2,'p_skipTags','extract_info_timeline.py',75),
+  ('skipTags -> OPENHREF skipTags','skipTags',2,'p_skipTags','extract_info_timeline.py',76),
+  ('skipTags -> CLOSEHREF skipTags','skipTags',2,'p_skipTags','extract_info_timeline.py',77),
+  ('skipTags -> <empty>','skipTags',0,'p_skipTags','extract_info_timeline.py',78),
+  ('contentSequence -> date contentElement contentSequence','contentSequence',3,'p_contentSequence','extract_info_timeline.py',82),
+  ('contentSequence -> contentElement','contentSequence',1,'p_contentSequence','extract_info_timeline.py',83),
+  ('date -> HEADSTART CONTENT OPENHREF CONTENT CLOSEHREF HEADEND','date',6,'p_date','extract_info_timeline.py',106),
+  ('date -> HEADSTART CONTENT HEADEND','date',3,'p_date','extract_info_timeline.py',107),
+  ('contentElement -> OPENHREF skip CLOSEHREF contentElement','contentElement',4,'p_contentElement','extract_info_timeline.py',136),
+  ('contentElement -> OPENFIG skipcontent CLOSEFIG contentElement','contentElement',4,'p_contentElement','extract_info_timeline.py',137),
+  ('contentElement -> CONTENT contentElement','contentElement',2,'p_contentElement','extract_info_timeline.py',138),
+  ('contentElement -> empty','contentElement',1,'p_contentElement','extract_info_timeline.py',139),
+  ('skip -> CONTENT skip','skip',2,'p_skip','extract_info_timeline.py',147),
+  ('skip -> empty','skip',1,'p_skip','extract_info_timeline.py',148),
+  ('skipcontent -> CONTENT skipcontent','skipcontent',2,'p_skipcontent','extract_info_timeline.py',160),
+  ('skipcontent -> OPENHREF skipcontent','skipcontent',2,'p_skipcontent','extract_info_timeline.py',161),
+  ('skipcontent -> CLOSEHREF skipcontent','skipcontent',2,'p_skipcontent','extract_info_timeline.py',162),
+  ('skipcontent -> empty','skipcontent',1,'p_skipcontent','extract_info_timeline.py',163),
+  ('content -> CONTENT','content',1,'p_content','extract_info_timeline.py',166),
+  ('empty -> <empty>','empty',0,'p_empty','extract_info_timeline.py',175),
 ]
