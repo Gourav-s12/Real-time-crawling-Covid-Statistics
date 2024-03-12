@@ -12,4 +12,4 @@ def main(name):
     f.close
 
 if __name__ == '__main__':
-    main('/wiki/Responses_to_the_COVID-19_pandemic_in_August_2021')
+    main('/wiki/Timeline_of_the_COVID-19_pandemic_in_August_2021')

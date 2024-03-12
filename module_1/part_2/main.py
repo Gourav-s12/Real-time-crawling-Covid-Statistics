@@ -6,6 +6,7 @@ import webpage_download_country
 import get_countries
 import main_single_country
 import marge_output
+import os
 
 countries = {}
 def main():
@@ -14,6 +15,8 @@ def main():
     print(countries)
     # webpage_download_country.main(countries['Asia'][11])
     
+    if not os.path.exists('output'):
+        os.makedirs('output')
     # Iterate through continents
     for continent, country_list in countries.items():
         # Iterate through countries in each continent
