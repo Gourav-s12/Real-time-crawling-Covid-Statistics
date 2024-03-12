@@ -28,4 +28,4 @@ with open(file_list[0], 'r') as file:
         if ":" in line:
             # print(line.strip().split(":"))
             date,val = line.strip().split(":")
-            print(f"{date.replace("-","")} :- {val}")
+            print(f"{date} :- {val}")

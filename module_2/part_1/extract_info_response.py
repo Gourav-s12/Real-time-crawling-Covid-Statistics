@@ -138,6 +138,9 @@ para = ""
 def main(file_name, folder_name):
     global edit_encounter
     global has_seen_reference
+    global para
+    global x
+    para = ""
     has_seen_reference = False
     edit_encounter = 0 
 
