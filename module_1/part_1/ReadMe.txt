@@ -1,0 +1,1 @@
+The Task1.py file fetches Yesterday's data of all Countries/World/Continent and writes in a textfile (text.txt). 
