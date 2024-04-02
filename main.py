@@ -52,14 +52,14 @@ while True:
                 os.chdir('module_3/part_1/part_2')
                 os.system('python main.py')
                 # Change directory back to the main directory
-                os.chdir('../../../../')
+                os.chdir('../../../')
 
             elif query_menu_choice == 'c':
                 # Change directory to module_3/part_2/part_1
                 os.chdir('module_3/part_2/part_1')
                 os.system('python main.py')
                 # Change directory back to the main directory
-                os.chdir('../../../../')
+                os.chdir('../../../')
 
             elif query_menu_choice == 'd':
                 pass
