@@ -1,0 +1,9 @@
+#  Country,Other  TotalCases  NewCases  TotalDeaths  NewDeaths  TotalRecovered  NewRecovered  ActiveCases  Serious,Critical  Tot&nbspCases/1Mpop  Deaths/1Mpop  TotalTests  Tests/1Mpop  PopulationContinent  1CaseeveryXppl  1DeatheveryXppl  1Test  everyXppl  NewCases/1Mpop  NewDeaths/1Mpop  ActiveCases/1Mpop
+
+---   World   704268352   26813   7006307   112   675169446   29849   22092599   35284   90351   898.8   ---   ---   ---   All   ---   ---   ---   ---   ---
+
+14   Australia   11836263   784   24326   2   11801495   ---   10442   8   454040   933   81916639   3142326   26068792   Australia/Oceania   2   1072   0   30   0.08   401
+
+Percent:-
+
+14   Australia   1.680646725979815   2.923954798045724   0.34720145720134726   1.7857142857142856   1.7479308446075623   NA   0.04726469710512557   0.02267316630767487   502.529025688703   103.80507343124165   NA   NA   NA   NA   NA   NA   NA   NA   NA

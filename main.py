@@ -20,6 +20,12 @@ while True:
 
     if main_menu_choice == 'a':
         # Change directory to module_1/part_2
+        os.chdir('module_1/part_1')
+        os.system('python Task1.py')
+        # Change directory back to the main directory
+        os.chdir('../../')
+
+        # Change directory to module_1/part_2
         os.chdir('module_1/part_2')
         os.system('python main.py')
         # Change directory back to the main directory
@@ -34,7 +40,7 @@ while True:
     elif main_menu_choice == 'b':
 
         while True:
-            query_menu_choice = input("a. data query \n"
+            query_menu_choice = input("a. data query - get country info respect to world\n"
                                       "b. data query - get changes in countries \n"
                                       "c. data query - get news and response \n"
                                       "d. data query \n"
@@ -45,7 +51,11 @@ while True:
                 break
 
             if query_menu_choice == 'a':
-                pass
+                # Change directory to module_3/part_1/part_2
+                os.chdir('module_3/part_1/part_1')
+                os.system('python main.py')
+                # Change directory back to the main directory
+                os.chdir('../../../')
 
             elif query_menu_choice == 'b':
                 # Change directory to module_3/part_1/part_2
