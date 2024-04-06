@@ -90,7 +90,7 @@ Australlia_active_case.txt , Australlia_new_case.txt , Australlia_daily_death.tx
   percentage of the country statistics with respect to that of the world are printed using mapper/combiner/reducer.
 
 - run :
-- Run 'main.py' then choose "b. data query" and then 'b. data query - get changes in countries' and then give asked inputs.
+- Run 'main.py' then choose "b. data query" and then 'a. data query - get country info respect to world' and then give asked inputs.
 
 
 - Part 2 : 
