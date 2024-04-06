@@ -1,6 +1,5 @@
 import ply.lex as lex
 import ply.yacc as yacc
-import os
 from urllib.request import Request, urlopen
 
 ###DEFINING TOKENS###
@@ -239,6 +238,6 @@ def main():
             else:
                 file.write(rst[i])
                 file.write("  ")
-    print("The required data of all Countries/World/Continent is written in the textfile text.txt.")
+    print("The required data of all the Countries/World/Continent is written in the textfile text.txt.")
 if __name__ == '__main__':
     main()

@@ -48,21 +48,29 @@ The project is divided into 4 modules.
   - Crawled Wikipedia for Covid-19 timeline and response data (module 2 part 1, module 3 part 2.1)
   - main file menu
 
-- Bibek Pal (Roll NO: 23CS600R39)
+- Bibek Pal (Roll NO: 23CS60R39)
   - [Will be added]
 
-- Aditya Srivastav (Roll No: 23CS60R15)
-  - [Will be added]
-
+- Aditya Shrivastava (Roll No: 23CS60R15)
+  - Crawled worldometers website for each countries Active cases, Daily death, New Recovered, New cases, etc. (module 1 part 1)
+  - Addressing Queries of Worldometer Covid Statistics (module 3 part 1.1)
+  - main file menu
 # Work done
 
 ## Module 1 
+- Part 1: 
+- Extract the data for Countries/World/Continent about Covid Statistics from worldometers wikipedia website and storing it in a textfile 
+  text.txt.
+
+- run :
+- Run 'main.py' then choose 'a. data load'
+
 
 - Part 2: 
 - Extract the data for the 4 fields mentioned for a particular country mentioned in worldmeters_countrylist.txt . The grammars are mentioned in the file 'extract_activecases.py' , 'extract_newcases.py' , 'extract_newdeaths.py' and 'extract_newrecoveries.py' . After that the outputs are stored into output folder with each country having 4 files like-
 Australlia_active_case.txt , Australlia_new_case.txt , Australlia_daily_death.txt , Australlia_new_recovered.txt .
 
-*NOTE* All countries mentioned in worldmeters_countrylist.txt are do not have all of the 4 fields. Some Countries may have 3 or fewer files.
+*NOTE* All countries mentioned in worldmeters_countrylist.txt do not have all of the 4 fields. Some Countries may have 3 or fewer files.
 
 - run :
 - Run 'main.py' then choose 'a. data load'
@@ -78,6 +86,12 @@ Australlia_active_case.txt , Australlia_new_case.txt , Australlia_daily_death.tx
 
 
 ## Module 3.1 
+- Part 1 : The user is asked about the name of the country. The statistics of the given country and the world are compared and the
+  percentage of the country statistics with respect to that of the world are printed using mapper/combiner/reducer.
+
+- run :
+- Run 'main.py' then choose "b. data query" and then 'b. data query - get changes in countries' and then give asked inputs.
+
 
 - Part 2 : 
 - display the details of 4 fields of a particular country. The user is asked about the name of the country as well as start and end date. The country, start date and end date are written in a file which is to be feed into the mapper. Also all country names are written in a file which is to be feed into the mapper along with date. The mapper passes the data to the reducer which inturn preprocess and filters and send it to the reducer for the final output.The logic of closest country in respect to percentage change is also done int the reducer. 
