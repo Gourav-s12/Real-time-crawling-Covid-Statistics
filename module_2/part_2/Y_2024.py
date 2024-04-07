@@ -200,7 +200,7 @@ def process_html_data(html_data):
     return ans
 
 def write_to_file(content, name):
-    with open(f'../Files/{name}.txt', 'w', encoding="utf-8") as file:
+    with open(f'./Files/{name}.txt', 'w', encoding="utf-8") as file:
         file.write(content)
     print(f'Output written to {name}.txt')
 
@@ -209,6 +209,6 @@ def call(name):
     processed_content = process_html_data(webpage_content)
     write_to_file(processed_content, name)
 
-if __name__ == '__main__':
+def main():
     call('2024')  # 2023, 2024
 

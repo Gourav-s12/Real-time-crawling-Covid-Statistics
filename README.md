@@ -31,7 +31,7 @@ python main.py
   - main file menu
 
 - Bibek Pal (Roll NO: 23CS60R39)
-  - Store the responses of 2021 in 12 text files where each text file contains information of a particular month of 2021 and so on for other queries.
+  - Store the responses of 2021 in 12 text files where each text file contains information of a particular month of 2021 and so on for other queries ( dub).
   - Crawled Wikipedia and extract the news information that is available for the five countries. [queries not working]
 
 - Aditya Shrivastava (Roll No: 23CS60R15)

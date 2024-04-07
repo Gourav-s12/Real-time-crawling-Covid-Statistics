@@ -195,9 +195,9 @@ def fetch_page_data(country_name):
     request = req.Request('https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_' + country_name, headers={'User-Agent': 'Mozilla/5.0'})
     webpage = req.urlopen(request).read()
     page_content = webpage.decode("utf8")
-    with open('../Files/try.html', 'w', encoding="utf-8") as file:
+    with open('./Files/try.html', 'w', encoding="utf-8") as file:
         file.write(page_content)
-    return '../Files/try.html'
+    return './Files/try.html'
 
 def process_page_data(file_path):
     result = ''
@@ -226,10 +226,11 @@ def process_page_data(file_path):
 def fetch_data(country_name):
     file_path = fetch_page_data(country_name)
     result = process_page_data(file_path)
-    with open(f'../Files/Responses_{country_name}.txt', 'w', encoding="utf-8") as file:
+    with open(f'./Files/Responses_{country_name}.txt', 'w', encoding="utf-8") as file:
         file.write(result)
 
 
-if __name__ == '__main__':
+def main():
+    fetch_data('Singapore_(2021)') 
     fetch_data('Singapore_(2022)')  # ENGLAND SINGAPUR
 

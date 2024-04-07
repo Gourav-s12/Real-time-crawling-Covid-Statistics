@@ -20,19 +20,25 @@ while True:
 
     if main_menu_choice == 'a':
         # Change directory to module_1/part_2
-        os.chdir('module_1/part_1')
-        os.system('python Task1.py')
-        # Change directory back to the main directory
-        os.chdir('../../')
+        # os.chdir('module_1/part_1')
+        # os.system('python Task1.py')
+        # # Change directory back to the main directory
+        # os.chdir('../../')
 
-        # Change directory to module_1/part_2
-        os.chdir('module_1/part_2')
-        os.system('python main.py')
-        # Change directory back to the main directory
-        os.chdir('../../')
+        # # Change directory to module_1/part_2
+        # os.chdir('module_1/part_2')
+        # os.system('python main.py')
+        # # Change directory back to the main directory
+        # os.chdir('../../')
+
+        # # Change directory to module_2/part_1
+        # os.chdir('module_2/part_1')
+        # os.system('python main.py')
+        # # Change directory back to the main directory
+        # os.chdir('../../')
 
         # Change directory to module_2/part_1
-        os.chdir('module_2/part_1')
+        os.chdir('module_2/part_2')
         os.system('python main.py')
         # Change directory back to the main directory
         os.chdir('../../')

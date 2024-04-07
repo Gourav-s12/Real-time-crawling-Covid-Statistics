@@ -215,14 +215,14 @@ s
 
 def write_to_file(name, ans):
     print(ans)
-    with open(f'../Files/{name}.txt', 'w', encoding="utf-8") as f:
+    with open(f'./Files/{name}.txt', 'w', encoding="utf-8") as f:
         f.write(ans)
 
-def main(name):
+def main(name= '2023'):
     webpage_data = get_webpage_data(name)
     processed_data = process_data(webpage_data)
     write_to_file(name, processed_data)
 
-if __name__ == '__main__':
-    main('2023')  # 2019
+# def main():
+#     main('2023')  # 2019
 
