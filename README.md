@@ -31,7 +31,8 @@ python main.py
   - main file menu
 
 - Bibek Pal (Roll NO: 23CS60R39)
-  - Crawled Wikipedia and extract the news information that is available for the five countries. [not working]
+  - Store the responses of 2021 in 12 text files where each text file contains information of a particular month of 2021 and so on for other queries.
+  - Crawled Wikipedia and extract the news information that is available for the five countries. [queries not working]
 
 - Aditya Shrivastava (Roll No: 23CS60R15)
   - Crawled worldometers website for each countries Active cases, Daily death, New Recovered, New cases, etc. (module 1 part 1)
