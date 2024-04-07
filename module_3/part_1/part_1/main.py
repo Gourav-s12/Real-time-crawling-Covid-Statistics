@@ -44,7 +44,7 @@ def process_call(country):
         print(f"{country} does not have the record, maybe load the data from the main menu")
         return 
 
-    command = f" python mapper.py {file_name} {country} | python combiner.py | python reducer.py "
+    command = f" python3 mapper.py {file_name} {country} | python3 combiner.py | python3 reducer.py "
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
 
     output, _ = process.communicate()

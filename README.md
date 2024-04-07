@@ -23,24 +23,6 @@ python main.py
 - change "python3 main.py" -> "python main.py" 
 - run "python main.py"
 
-
-## Project Description:
-
-The project is divided into 4 modules. 
-- Module 1 : Crawling Covid-19 statistics from the website https://www.worldometers.info/coronavirus/ (for all countries and individual countries over a period of time)
-  - part 1  : Extracting the worldwide total cases, Active cases, Total deaths, Total recovered, Total tests, Death/million, Tests/million, New case, New death, New recovered.
-  - part 2  : Extracting each countries Active cases, Daily death, New Recovered, New cases, etc.
-
-- Module 2 : Crawling Covid-19 news wiki page https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic containing date wise text data of the Covid-19 news and also for multiple countries.
-  - part 1  : Extracting the worldwide news and responses for all times.
-  - part 2  : Extracting the news and responses for a particular country over a period of time.
-
-- Module 3 : 
-    - part 1  : Using NOSQL database to give the results of the statistics and news in a structured format for the queries related to MODULE 1 
-    - part 2  : Using NOSQL database to give the results of the statistics and news in a structured format for the queries related to MODULE 2
-
-- Module 4: Combining the entire project and creating a menu driven for the user to interact with the database and get the required information.
-
 ## Contributors
 
 - Gourav Sarkar (Roll NO: 23CS60R01)
@@ -59,7 +41,7 @@ The project is divided into 4 modules.
 # Work done
 
 ## Module 1 
-- Part 1: 
+#### Part 1 [Aditya Shrivastava]: 
 - Extract the data for Countries/World/Continent about Covid Statistics from worldometers wikipedia website and storing it in a textfile 
   text.txt.
 
@@ -67,8 +49,8 @@ The project is divided into 4 modules.
 - Run 'main.py' then choose 'a. data load'
 
 
-- Part 2 [Gourav Sarkar]: 
-- Extract the data for the 4 fields mentioned for a particular country mentioned in worldmeters_countrylist.txt . The grammars are mentioned in the file 'extract_activecases.py' , 'extract_newcases.py' , 'extract_newdeaths.py' and 'extract_newrecoveries.py' . After that the outputs are stored into output folder with each country having 4 files like-
+#### Part 2 [Gourav Sarkar]: 
+- Extract the data for the 4 fields mentioned for a particular country mentioned in worldmeters_countrylist.txt with 'option_new_case.py' , 'option_active_case.py' , 'option_new_recovered.py' and 'option_daily_death.py' . After that the outputs are stored into output folder with each country having 4 files like-
 Australlia_active_case.txt , Australlia_new_case.txt , Australlia_daily_death.txt , Australlia_new_recovered.txt .
 
 *NOTE* All countries mentioned in worldmeters_countrylist.txt do not have all of the 4 fields. Some Countries may have 3 or fewer files.
@@ -79,23 +61,26 @@ Australlia_active_case.txt , Australlia_new_case.txt , Australlia_daily_death.tx
 
 ## Module 2 
 
-- Part 1 [Gourav Sarkar]: 
-- To obtain all the required Wikipedia webpages, we first download the main wiki page using Mainpage_download.py. From the main wiki page, we extract all the timelines and response pages present on that page using links_extract.py. Finally, using extract_info_timeline.py and extract_info_response.py, we extract all the response pages one by one, categorized by their respective month names, which are then organized inside their respective years. We store the data within timeline and response folder, as format of - DATE: Info in each row. Here, each year is a folder and they have 12 files in them as for each months.
+#### Part 1 [Gourav Sarkar]: 
+- To obtain all the required Wikipedia webpages, we first download the main wiki page using Mainpage_download.py. From the main wiki page, we extract all the timelines and response pages present on that page into timeline.txt and response.txt files. Finally, using extract_info_timeline.py and extract_info_response.py, we extract pages one by one, categorized by their respective month names, which are then organized inside their respective years. We store the data within timeline and response folder, as format of - DATE: Info in each row. Here, each year is a folder and they have 12 files in them as for each months.
 
 - run :
 - Run 'main.py' then choose 'a. data load'
 
+#### Part 2 [Bibek Pal]: 
+- not updated the readme
 
 ## Module 3.1 
-- Part 1 : The user is asked about the name of the country. The statistics of the given country and the world are compared and the
+#### Part 1 [Aditya Shrivastava]: 
+- The user is asked about the name of the country. The statistics of the given country and the world are compared and the
   percentage of the country statistics with respect to that of the world are printed using mapper/combiner/reducer.
 
 - run :
 - Run 'main.py' then choose "b. data query" and then 'a. data query - get country info respect to world' and then give asked inputs.
 
 
-- Part 2 [Gourav Sarkar]: 
-- display the details of 4 fields of a particular country. The user is asked about the name of the country as well as start and end date. The country, start date and end date are written in a file which is to be feed into the mapper. Also all country names are written in a file which is to be feed into the mapper along with date. The mapper passes the data to the reducer which inturn preprocess and filters and send it to the reducer for the final output.The logic of closest country in respect to percentage change is also done int the reducer. 
+#### Part 2 [Gourav Sarkar]: 
+- display the details of 4 types of data of a particular country. The user is asked about the name of the country as well as start and end date. First extract the country, start date and end date are written in a file(mapper) then filter in between those time range(combiner) and send it for the final output(reducer).The logic of closest country in respect to percentage change is also done in the reducer. 
 
 - run :
 - Run 'main.py' then choose "b. data query" and then 'b. data query - get changes in countries' and then give asked inputs
@@ -115,8 +100,8 @@ Closest Country with Similar Statistics is Malaysia with 349600.0%
 
 ## Module 3.2
 
-- Part 1 [Gourav Sarkar]: 
-- Displays all the worldwide responses given a time range. The user is asked about (start and end date). All the responces were extracted and saved in module 2. Given the time range, goes through all the subfolders and extracts all txt files which are inbetween those time range and puts all text in a single txt file. This is then fed to mapper. The mapper passes the data to the reducer which preprocess the data and sends it to the reducer for the final output.
+#### Part 1 [Gourav Sarkar]: 
+- Displays all the worldwide responses given a time range. The user is asked about (start and end date). All the data were extracted and saved in module 2. Given the time range, goes through all the subfolders and extracts all txt files(mapper) then filter in between those time range(combiner) and puts all text in a single txt optput(reducer).
 
 - run :
 - Run 'main.py' then choose "b. data query" and then 'c. data query - get news and response' and then give asked inputs
@@ -137,5 +122,5 @@ Closest Country with Similar Statistics is Malaysia with 349600.0%
 
 ```
 
-- Part 2 :
+#### Part 2 [Bibek Pal]:
 - not done  

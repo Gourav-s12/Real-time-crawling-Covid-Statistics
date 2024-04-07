@@ -198,7 +198,7 @@ def main(file_name, folder_name):
         #     date = datetime.strptime(p[3].strip() + " 2024", "%B %d %Y").strftime("%m-%d")
         # para+=("\n" +date+ ':')
 
-        global para
+        # global para
         with open(output_file_path ,'w') as output_file:
             output_file.write(para+'\n')
             para=''

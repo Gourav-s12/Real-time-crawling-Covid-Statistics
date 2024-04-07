@@ -21,19 +21,19 @@ while True:
     if main_menu_choice == 'a':
         # Change directory to module_1/part_2
         os.chdir('module_1/part_1')
-        os.system('python Task1.py')
+        os.system('python3 Task1.py')
         # Change directory back to the main directory
         os.chdir('../../')
 
         # Change directory to module_1/part_2
         os.chdir('module_1/part_2')
-        os.system('python main.py')
+        os.system('python3 main.py')
         # Change directory back to the main directory
         os.chdir('../../')
 
         # Change directory to module_2/part_1
         os.chdir('module_2/part_1')
-        os.system('python main.py')
+        os.system('python3 main.py')
         # Change directory back to the main directory
         os.chdir('../../')
 
@@ -53,21 +53,21 @@ while True:
             if query_menu_choice == 'a':
                 # Change directory to module_3/part_1/part_2
                 os.chdir('module_3/part_1/part_1')
-                os.system('python main.py')
+                os.system('python3 main.py')
                 # Change directory back to the main directory
                 os.chdir('../../../')
 
             elif query_menu_choice == 'b':
                 # Change directory to module_3/part_1/part_2
                 os.chdir('module_3/part_1/part_2')
-                os.system('python main.py')
+                os.system('python3 main.py')
                 # Change directory back to the main directory
                 os.chdir('../../../')
 
             elif query_menu_choice == 'c':
                 # Change directory to module_3/part_2/part_1
                 os.chdir('module_3/part_2/part_1')
-                os.system('python main.py')
+                os.system('python3 main.py')
                 # Change directory back to the main directory
                 os.chdir('../../../')
 

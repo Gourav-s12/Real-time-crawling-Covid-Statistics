@@ -68,7 +68,7 @@ def process_call(start_date, end_date, what = "response"):
         print("no file found , you should load the data first in the main menu")
         return 
 
-    command = f" ( python mapper.py {file_list[0]} | "
+    command = f" ( python3 mapper.py {file_list[0]} | "
     # process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
 
     # getting year
@@ -77,17 +77,17 @@ def process_call(start_date, end_date, what = "response"):
 
     for file in file_list[1:]:
 
-        command = command + f" sort | python combiner.py {start_date} {end_date} {year} ) && ( python mapper.py {file} | "
+        command = command + f" sort | python3 combiner.py {start_date} {end_date} {year} ) && ( python3 mapper.py {file} | "
         # process = subprocess.Popen(command, shell=True, stdin=process.stdout, stdout=subprocess.PIPE)
 
         # getting year
         match_re = re.search(r'/\w+/(\d{4})/', file)
         year = match_re.groups()[0]
 
-    command = command + f" sort | python combiner.py {start_date} {end_date} {year} ) | sort "
+    command = command + f" sort | python3 combiner.py {start_date} {end_date} {year} ) | sort "
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE) # subprocess.Popen(command, shell=True, stdin=process.stdout, stdout=subprocess.PIPE)
 
-    command = " python reducer.py "
+    command = " python3 reducer.py "
     process = subprocess.Popen(command, shell=True, stdin=process.stdout, stdout=subprocess.PIPE)
     
     output, _ = process.communicate()

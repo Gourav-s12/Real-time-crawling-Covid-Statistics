@@ -78,7 +78,7 @@ def process_call(country, start_date, end_date, what = "daily_death"):
         print(f"{country} does not have a {what} record, maybe load the data from the main menu")
         return 
 
-    command = f" ( python mapper.py {file_name} {country} | "
+    command = f" ( python3 mapper.py {file_name} {country} | "
     # process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
 
     for coun in all_countries:
@@ -90,13 +90,13 @@ def process_call(country, start_date, end_date, what = "daily_death"):
         except:
             continue
 
-        command = command + f" sort | python combiner.py {start_date} {end_date} ) && ( python mapper.py {file_name} {coun} | "
+        command = command + f" sort | python3 combiner.py {start_date} {end_date} ) && ( python3 mapper.py {file_name} {coun} | "
         # process = subprocess.Popen(command, shell=True, stdin=process.stdout, stdout=subprocess.PIPE)
 
-    command = command + f" sort | python combiner.py {start_date} {end_date} ) | sort "
+    command = command + f" sort | python3 combiner.py {start_date} {end_date} ) | sort "
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE) # subprocess.Popen(command, shell=True, stdin=process.stdout, stdout=subprocess.PIPE)
 
-    command = f" python reducer.py {country} {what}"
+    command = f" python3 reducer.py {country} {what}"
     process = subprocess.Popen(command, shell=True, stdin=process.stdout, stdout=subprocess.PIPE)
     
     output, _ = process.communicate()
