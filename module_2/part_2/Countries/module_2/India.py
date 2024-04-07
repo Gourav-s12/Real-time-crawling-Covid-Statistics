@@ -289,7 +289,7 @@ def write_to_file(name, content):
         f.write(content)
     
 if __name__ == '__main__':
-    c('England_(January-June_2020)')#India
+    c('England_(January-June_2020)')
     months = [
         'January', 'February', 'March', 'April',
         'May', 'June', 'July', 'August',

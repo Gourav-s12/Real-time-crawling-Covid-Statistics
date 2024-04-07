@@ -229,6 +229,7 @@ def fetch_data(country_name):
     with open(f'../Files/Responses_{country_name}.txt', 'w', encoding="utf-8") as file:
         file.write(result)
 
+
 if __name__ == '__main__':
     fetch_data('Singapore_(2022)')  # ENGLAND SINGAPUR
 
