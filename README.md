@@ -26,11 +26,11 @@ python main.py
 ## Contributors
 
 - Gourav Sarkar (Roll NO: 23CS60R01)
-  - Crawled worldometers website for each countries Active cases, Daily death, New Recovered, New cases, etc. and handle user queries for this part (module 1 part 2, module 3 part 1.2)
-  - Crawled Wikipedia for Covid-19 timeline and response data and Store it in 12 text files each year, handle user queries for this part(module 2 part 1, module 3 part 2.1)
-  - created centralized main.py for (module 2 part 2) 
+  - Crawled worldometers website for each countries Active cases, Daily death, New Recovered, New cases, etc.(module 1 part 2)
+  - And handle user queries for this part (module 3 part 1.2)
+  - Crawled Wikipedia for Covid-19 timeline and response data and Store it in 12 text files each year (module 2 part 1)
+  - And handle user queries for this part (module 3 part 1.2)
   - main file menu
-
 
 - Aditya Shrivastava (Roll No: 23CS60R15)
   - Crawled worldometers website for each countries Active cases, Daily death, New Recovered, New cases, etc. (module 1 part 1)
@@ -39,6 +39,7 @@ python main.py
   
 - Bibek Pal(Roll No: 23CS60R39)
   - Addressing Queries of Worldometer Covid Statistics (module 3 part 1.1)
+  - Crawled Wikipedia and extract the news information that is available for the five countries. [not done]
   - main file menu
 
 # Work done
@@ -70,13 +71,16 @@ Australlia_active_case.txt , Australlia_new_case.txt , Australlia_daily_death.tx
 - run :
 - Run 'main.py' then choose 'a. data load'
 
+#### Part 2 [Bibek Pal]: 
+
+
 ## Module 3.1 
 #### Part 1 [Aditya Shrivastava & Bibek Pal]: 
 - The user is asked about the name of the country. The statistics of the given country and the world are compared and the
   percentage of the country statistics with respect to that of the world are printed using mapper/combiner/reducer.
   
 - run :
-- Run 'main.py' then choose "b. data query" and then 'a. data query - get country info respect to world' and then give asked inputs.
+- Run 'main.py' then choose "b. data query" and then 'a. data query - get country info respect to world' and then give asked inputs. 
 
 
 #### Part 2 [Gourav Sarkar]: 
