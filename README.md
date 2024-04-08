@@ -31,11 +31,8 @@ python main.py
   - created centralized main.py for (module 2 part 2) 
   - main file menu
 
-- Bibek Pal (Roll NO: 23CS60R39)
-  - Store the responses of 2021 in 12 text files where each text file contains information of a particular month of 2021 . [output files not structured] [duplicate task done]
-  - Crawled Wikipedia and extract the news information that is available for the five countries. [queries not working]
 
-- Aditya Shrivastava (Roll No: 23CS60R15)
+- Aditya Shrivastava (Roll No: 23CS60R15) & Bibek Pal(Roll No: 23CS60R39)
   - Crawled worldometers website for each countries Active cases, Daily death, New Recovered, New cases, etc. (module 1 part 1)
   - Addressing Queries of Worldometer Covid Statistics (module 3 part 1.1)
   - main file menu
