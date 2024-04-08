@@ -69,14 +69,11 @@ Australlia_active_case.txt , Australlia_new_case.txt , Australlia_daily_death.tx
 - run :
 - Run 'main.py' then choose 'a. data load'
 
-#### Part 2 [Bibek Pal]: 
-- not updated the readme
-
 ## Module 3.1 
-#### Part 1 [Aditya Shrivastava]: 
+#### Part 1 [Aditya Shrivastava & Bibek Pal]: 
 - The user is asked about the name of the country. The statistics of the given country and the world are compared and the
   percentage of the country statistics with respect to that of the world are printed using mapper/combiner/reducer.
-
+  
 - run :
 - Run 'main.py' then choose "b. data query" and then 'a. data query - get country info respect to world' and then give asked inputs.
 
