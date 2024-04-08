@@ -28,10 +28,11 @@ python main.py
 - Gourav Sarkar (Roll NO: 23CS60R01)
   - Crawled worldometers website for each countries Active cases, Daily death, New Recovered, New cases, etc. and handle user queries for this part (module 1 part 2, module 3 part 1.2)
   - Crawled Wikipedia for Covid-19 timeline and response data and Store it in 12 text files each year, handle user queries for this part(module 2 part 1, module 3 part 2.1)
+  - created centralized main.py for (module 2 part 2) 
   - main file menu
 
 - Bibek Pal (Roll NO: 23CS60R39)
-  - Store the responses of 2021 in 12 text files where each text file contains information of a particular month of 2021 and so on for other queries ( dub).
+  - Store the responses of 2021 in 12 text files where each text file contains information of a particular month of 2021 . [output files not structured] [duplicate task done]
   - Crawled Wikipedia and extract the news information that is available for the five countries. [queries not working]
 
 - Aditya Shrivastava (Roll No: 23CS60R15)
