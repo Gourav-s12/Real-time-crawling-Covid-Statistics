@@ -1,14 +1,14 @@
 import ply.lex as lex
 import ply.yacc as yacc
 import re
-import marge_output
+import marge_output as mo
 
-###DEFINING TOKENS###
-tokens = ('OPENHEADER', 'CLOSEHEADER', 'OPENHREF', 'CLOSEHREF',
-          'CONTENT', 'OPENDIV', 'CLOSEDIV', 'OPENUL', 'CLOSEUL', 'OPENLI', 'CLOSELI', 'GARBAGE')
+### DEFINING TOKENS ###
+tokens = ('OPEN_LINK', 'CLOSE_LINK',
+          'CONTENT', 'OPEN_LIST_ITEM', 'CLOSE_LIST_ITEM', 'GARBAGE')
 t_ignore = '\t'
 
-###############Tokenizer Rules################
+############### Tokenizer Rules ################
 
 
 def t_CONTENT(t):
@@ -16,42 +16,22 @@ def t_CONTENT(t):
     return t
 
 
-def t_OPENHREF(t):
+def t_OPEN_LINK(t):
     r'<a[^>]*>'
     return t
 
 
-def t_CLOSEHREF(t):
+def t_CLOSE_LINK(t):
     r'</a[^>]*>'
     return t
 
 
-def t_OPENHEADER(t):
-    r'<h2[^>]*>'
-    return t
-
-
-def t_CLOSEHEADER(t):
-    r'</h2[^>]*>'
-    return t
-
-
-def t_OPENDIV(t):
-    r'<div[^>]*>'
-    return t
-
-
-def t_CLOSEDIV(t):
-    r'</div[^>]*>'
-    return t
-
-
-def t_OPENLI(t):
+def t_OPEN_LIST_ITEM(t):
     r'<li[^>]*>'
     return t
 
 
-def t_CLOSELI(t):
+def t_CLOSE_LIST_ITEM(t):
     r'</li[^>]*>'
     return t
 
@@ -65,27 +45,35 @@ def t_error(t):
 
 
 ####################################################################################################################################################################################################
-											#GRAMMAR RULES
+# GRAMMAR RULES
+
+
 def p_start(p):
-    '''start : orderedlist'''
+    '''start : ordered_list'''
     p[0] = p[1]
 
 
-def p_orderedlist(p):
-    '''orderedlist : OPENLI OPENHREF CONTENT CLOSEHREF'''
+def p_ordered_list(p):
+    '''ordered_list : OPEN_LIST_ITEM OPEN_LINK CONTENT CLOSE_LINK'''
 
-    global main_list
+    global extracted_links
     if len(p) == 5:
         if (re.search(r'\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\b', p[3]) \
                 and ('timeline' in p[2].lower() or 'response' in p[2].lower())) \
                 and re.search(r'\b\d{4}\b', p[2]):
-            link_list.append(p[2])
+            match = re.search(r'href="([^"]+)"', p[2])
+            if match:
+                extracted_links.append(match.group(1))
         elif re.search(r'_of_the_COVID-19_pandemic_in_(\d{4})', p[2]):
-            link_list.append(p[2])
+            match = re.search(r'href="([^"]+)"', p[2])
+            if match:
+                extracted_links.append(match.group(1))
+
 
 def p_empty(p):
     '''empty :'''
     pass
+
 
 # Error rule for syntax errors
 def p_error(p):
@@ -95,32 +83,24 @@ def p_error(p):
     # else:
     #     print(f"Syntax error at '{p.value}' at position {p.lexpos} it should not be a {p.type}")
 
-#########DRIVER FUNCTION#######
-link_list = []
+######### DRIVER FUNCTION ########
+extracted_links = []
+
+
 def main():
-    global link_list
-    file_obj = open('main.html', 'r', encoding="utf-8")
-    data = file_obj.read()
-    lexer = lex.lex()
-    lexer.input(data)
+    global extracted_links
+    file_handle = open('main.html', 'r', encoding="utf-8")
+    data_content = file_handle.read()
+    lexer_obj = lex.lex()
+    lexer_obj.input(data_content)
     # with open('token.txt', 'w') as file:
     #     # Write the line to the file
-    #     for tok in lexer:
+    #     for token in lexer_obj:
     #         file.write("\n")
-    #         file.write(str(tok))
+    #         file.write(str(token))
     parser = yacc.yacc()
-    parser.parse(data)
-    file_obj.close()
-
-    extracted_links = []
-    for link in link_list:
-        # Extract the URL from the anchor tag
-        match = re.search(r'href="([^"]+)"', link)
-        if match:
-            extracted_links.append(match.group(1))
+    parser.parse(data_content)
+    file_handle.close()
 
     # Save links to a text file
     return extracted_links
-
-if __name__ == '__main__':
-    main()

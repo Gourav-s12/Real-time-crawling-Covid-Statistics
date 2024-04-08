@@ -94,7 +94,7 @@ def process_call(country, start_date, end_date, what = "daily_death"):
         # process = subprocess.Popen(command, shell=True, stdin=process.stdout, stdout=subprocess.PIPE)
 
     command = command + f" sort | python3 combiner.py {start_date} {end_date} ) | sort "
-    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE) # subprocess.Popen(command, shell=True, stdin=process.stdout, stdout=subprocess.PIPE)
+    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE) 
 
     command = f" python3 reducer.py {country} {what}"
     process = subprocess.Popen(command, shell=True, stdin=process.stdout, stdout=subprocess.PIPE)
