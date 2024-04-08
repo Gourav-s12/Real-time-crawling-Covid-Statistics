@@ -32,8 +32,12 @@ python main.py
   - main file menu
 
 
-- Aditya Shrivastava (Roll No: 23CS60R15) & Bibek Pal(Roll No: 23CS60R39)
+- Aditya Shrivastava (Roll No: 23CS60R15)
   - Crawled worldometers website for each countries Active cases, Daily death, New Recovered, New cases, etc. (module 1 part 1)
+  - Addressing Queries of Worldometer Covid Statistics (module 3 part 1.1)
+  - main file menu
+  
+- Bibek Pal(Roll No: 23CS60R39)
   - Addressing Queries of Worldometer Covid Statistics (module 3 part 1.1)
   - main file menu
 
