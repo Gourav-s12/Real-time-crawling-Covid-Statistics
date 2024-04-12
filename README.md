@@ -18,7 +18,7 @@ python main.py
 - run "python3 main.py"
 - or in "python2" depends on your system
 
-### To run the code in linux-
+### To run the code in Windows-
 - you have to make sure within "main.py" in root folder
 - change "python3 main.py" -> "python main.py" 
 - run "python main.py"
