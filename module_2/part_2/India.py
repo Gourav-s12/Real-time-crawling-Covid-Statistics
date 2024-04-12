@@ -183,7 +183,7 @@ def get_webpage_content(name):
     req = Request('https://en.wikipedia.org/wiki/Responses_to_the_COVID-19_pandemic_in_'+name, headers={'User-Agent':'Mozilla/5.0'})
     webpage = urlopen(req).read()
     mydata = webpage.decode("utf8")
-    with open(f'./Output/try_{name}.html', 'w', encoding="utf-8") as f:
+    with open(f'./Files/try_{name}.html', 'w', encoding="utf-8") as f:
         f.write(mydata)
     return mydata
 
@@ -203,7 +203,7 @@ def process_webpage_content(data, name):
         prev = tok.type
 
     print(ans)
-    with open(f'./Output/Responses_{name}.txt', 'w', encoding="utf-8") as f:
+    with open(f'./Files/Responses_{name}.txt', 'w', encoding="utf-8") as f:
         f.write(ans)
         
 
@@ -212,7 +212,7 @@ def b(name):
     req = urllib.request.Request('https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_' + name, headers={'User-Agent': 'Mozilla/5.0'})
     webpage = urllib.request.urlopen(req).read()
     mydata = webpage.decode("utf8")
-    with open('./Output/try.html', 'w', encoding="utf-8") as f:
+    with open('./Files/try.html', 'w', encoding="utf-8") as f:
         f.write(mydata)
     print('Processing page')
     data = read_data_from_file()
@@ -221,7 +221,7 @@ def b(name):
     write_to_file(name, ans)
 
 def read_data_from_file():
-    with open('./Output/try.html', 'r', encoding="utf-8") as file_obj:
+    with open('./Files/try.html', 'r', encoding="utf-8") as file_obj:
         return file_obj.read()
 
 def process_data(data):
@@ -244,7 +244,7 @@ def process_data(data):
     return ans
 
 def write_to_file(name, content):
-    with open(f'./Output/{name}.txt', 'w', encoding="utf-8") as f:
+    with open(f'./Files/{name}.txt', 'w', encoding="utf-8") as f:
         f.write(content)
 
 
@@ -253,7 +253,7 @@ def c(name):
     req = urllib.request.Request('https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_'+name, headers={'User-Agent':'Mozilla/5.0'})
     webpage = urllib.request.urlopen(req).read()
     mydata = webpage.decode("utf8")
-    with open('./Output/try.html', 'w', encoding="utf-8") as f:
+    with open('./Files/try.html', 'w', encoding="utf-8") as f:
         f.write(mydata)
     print('Processing page')
     data = read_from_file()
@@ -262,7 +262,7 @@ def c(name):
     write_to_file(name, processed_data)
 
 def read_from_file():
-    with open('./Output/try.html', 'r', encoding="utf-8") as file_obj:
+    with open('./Files/try.html', 'r', encoding="utf-8") as file_obj:
         return file_obj.read()
 
 def process_data(data):
@@ -285,7 +285,7 @@ def process_data(data):
     return ans
 
 def write_to_file(name, content):
-    with open(f'./Output/{name}.txt', 'w', encoding="utf-8") as f:
+    with open(f'./Files/{name}.txt', 'w', encoding="utf-8") as f:
         f.write(content)
     
 def main():

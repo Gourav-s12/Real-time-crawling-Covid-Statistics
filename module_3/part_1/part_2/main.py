@@ -18,6 +18,16 @@ def main():
     print("************************************")
         
     while True :
+        choice = input("\nChoose an option:\n"
+                        "a. Change in active cases in %\n"
+                        "b. Change in daily death in %\n"
+                        "c. Change in new recovered in %\n"
+                        "d. Change in new cases in %\n"
+                        "q. go back to previous menu: \n"
+                    )
+        if choice == 'q' :
+            break
+        
         country = input("\nEnter Name of the Country : ")
         country = country.strip().replace(" ","_")
 
@@ -33,16 +43,6 @@ def main():
             print("Invalid country\n valid countries are- \n")
             print(all_countries)
             continue
-
-        choice = input("\nChoose an option:\n"
-                        "a. Change in active cases in %\n"
-                        "b. Change in daily death in %\n"
-                        "c. Change in new recovered in %\n"
-                        "d. Change in new cases in %\n"
-                        "q. go back to previous menu: \n"
-                    )
-        if choice == 'q' :
-            break
 
         date1 = input("Input Starting Date [dd-mm-yyyy format] : ") # "22-10-2023"
         start_date = validate_date(date1)

@@ -38,10 +38,10 @@ while True:
         os.chdir('../../')
 
         # Change directory to module_2/part_1
-        # os.chdir('module_2/part_2')
-        # os.system('python3 main.py')
-        # # Change directory back to the main directory
-        # os.chdir('../../')
+        os.chdir('module_2/part_2')
+        os.system('python3 main.py')
+        # Change directory back to the main directory
+        os.chdir('../../')
 
     elif main_menu_choice == 'b':
 

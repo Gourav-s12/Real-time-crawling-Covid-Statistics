@@ -179,12 +179,12 @@ def get_webpage(name):
     req = urllib2.Request('https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_'+name, headers={'User-Agent': 'Mozilla/5.0'})
     webpage = urllib2.urlopen(req).read()
     mydata = webpage.decode("utf8")
-    with open('./Output/try.html', 'w', encoding="utf-8") as f:
+    with open('./Files/try.html', 'w', encoding="utf-8") as f:
         f.write(mydata)
 
 def process_page(name):
     print('Processing page')
-    with open('./Output/try.html', 'r', encoding="utf-8") as file_obj:
+    with open('./Files/try.html', 'r', encoding="utf-8") as file_obj:
         data = file_obj.read()
         lexer = lex.lex()
         lexer.input(data)
@@ -208,7 +208,7 @@ def process_page(name):
                         ans += tok.value
             prev = tok.type
     print(ans)
-    with open(f'./Output/Responses_{name}.txt', 'w', encoding="utf-8") as f:
+    with open(f'./Files/Responses_{name}.txt', 'w', encoding="utf-8") as f:
         f.write(ans)
 
 def main():

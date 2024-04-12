@@ -29,7 +29,6 @@ python main.py
   - Crawled worldometers website for each countries Active cases, Daily death, New Recovered, New cases, etc.(module 1 part 2)
   - And handle user queries for this part (module 3 part 1.2)
   - Crawled Wikipedia for Covid-19 timeline and response data and Store it in 12 text files each year (module 2 part 1)
-  - And handle user queries for this part (module 3 part 1.2)
   - main file menu
 
 - Aditya Shrivastava (Roll No: 23CS60R15)
@@ -38,16 +37,14 @@ python main.py
   - main file menu
   
 - Bibek Pal(Roll No: 23CS60R39)
-  - Addressing Queries of Worldometer Covid Statistics (module 3 part 1.1)
-  - Crawled Wikipedia and extract the news information that is available for the five countries. [not done]
+  - Crawled Wikipedia and extract the news information that is available for the five countries. (module 2 part 2)
   - main file menu
 
 # Work done
 
 ## Module 1 
 #### Part 1 [Aditya Shrivastava]: 
-- Extract the data for Countries/World/Continent about Covid Statistics from worldometers wikipedia website and storing it in a textfile 
-  text.txt.
+- Extract the data for Countries/World/Continent about Covid Statistics from worldometers wikipedia website and storing it in a textfile text.txt.
 
 - run :
 - Run 'main.py' then choose 'a. data load'
@@ -72,10 +69,13 @@ Australlia_active_case.txt , Australlia_new_case.txt , Australlia_daily_death.tx
 - Run 'main.py' then choose 'a. data load'
 
 #### Part 2 [Bibek Pal]: 
+- Extract the news information available for the all the 5 countries (India, Australia, Malaysia, England, Singapore).
 
+- run :
+- Run 'main.py' then choose 'a. data load'
 
 ## Module 3.1 
-#### Part 1 [Aditya Shrivastava & Bibek Pal]: 
+#### Part 1 [Aditya Shrivastava]: 
 - The user is asked about the name of the country. The statistics of the given country and the world are compared and the
   percentage of the country statistics with respect to that of the world are printed using mapper/combiner/reducer.
   
